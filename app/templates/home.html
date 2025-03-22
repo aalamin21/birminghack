@@ -2,15 +2,8 @@
 {% import "bootstrap_wtf.html" as wtf %}
 
 {% block content %}
-	<form>
-        <input list="mtype">
-        <datalist id="mtype">
-            <option value="Break Up">
-            <option value="Quit Job">
-            <option value="Other">
-        </datalist>
-        <br>
-
-        {{ wtf.quick_form(form, action="", method="post", id="", novalidate=True, autofocus=False) }}
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        {{ wtf.quick_form(form) }}
     </form>
 {% endblock %}
