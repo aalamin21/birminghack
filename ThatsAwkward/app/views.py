@@ -1,6 +1,13 @@
 from flask import render_template, redirect, url_for, flash
 from app import app
+from app.forms import Form
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+    form = Form()
+    return render_template('home.html', title='Home Page', form=form)
+
+@app.route('/about')
+def about():
+    form = Form()
+    return render_template('home.html', title='Home Page', form=form)
