@@ -31,7 +31,7 @@ def generate_script(occasion, name, details, rudeness):
     Please generate a **first-person speech** that the user will say **directly to {name}**.  
     The message should:
     - Start with a **soft opening** or a joke (if appropriate).  
-    - Clearly state the breakup reason in a **concise, natural, and humorous way**.  
+    - Clearly state the reason in a **concise, natural, and humorous way**.  
     - End with a **smooth exit line** (e.g., "I wish you the best").  
 
     Format the response as a **full paragraph** that the user can read aloud.

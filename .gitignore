@@ -1,3 +1,8 @@
-neuphonic/.env
-
+#flask key
+.flaskenv
+#Neuphonics api key
 LLM/.env
+#gemini api key
+.env
+#static directory [audio direc]
+app/static/audio/*

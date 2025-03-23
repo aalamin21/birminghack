@@ -2,7 +2,7 @@ import os
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 class Config:
-    SECRET_KEY = os.environ.get('SECRET_KEY') or b'WR#&f&+%78er0we=%799eww+#7^90-;s'
+    SECRET_KEY = os.environ.get('FLASK_KEY')
 
     UPLOAD_FOLDER = os.path.join(basedir, 'app', 'data', 'uploads')
     MAX_CONTENT_LENGTH = 1 * 1024 * 1024
