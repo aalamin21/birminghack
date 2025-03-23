@@ -23,6 +23,8 @@ class Form(FlaskForm):
     validators=[not_empty_choice])
 
     name = StringField('Name', validators=[DataRequired()])
+    language = SelectField('Language', choices=['English','French','Japanese','Spanish'],
+                           validators=[DataRequired()])
     details = StringField('Details', validators=[DataRequired()])
     rudeness = IntegerField("Rudeness", widget=RangeInput(), default=5)
     submit = SubmitField('Generate Script')
