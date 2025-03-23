@@ -1,5 +1,6 @@
 import google.generativeai as genai
 import os
+
 from dotenv import load_dotenv
 
 # Load API key from .env file
@@ -7,7 +8,7 @@ load_dotenv()
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
 
-def generate_script(occasion, name, details, rudeness):
+def generate_script(occasion, name, details, rudeness, lang):
     """
     Generates a structured and humorous monologue script using Google Gemini API.
 
@@ -26,15 +27,16 @@ def generate_script(occasion, name, details, rudeness):
     **Scenario:** {occasion}  
     **Target Person:** {name}  
     **Reason:** {details}  
-    **Rudeness Level:** {rudeness} (1 = very polite, 10 = brutally direct)  
+    **Rudeness Level:** {rudeness} (1 = very polite, 10 = brutally direct) 
+    **Language:** {lang} 
 
-    Please generate a **first-person speech** that the user will say **directly to {name}**.  
+    Please generate a **first-person speech** that the user will say **directly to {name}** in {lang}.  
     The message should:
     - Start with a **soft opening** or a joke (if appropriate).  
     - Clearly state the reason in a **concise, natural, and humorous way**.  
     - End with a **smooth exit line** (e.g., "I wish you the best").  
 
-    Format the response as a **full paragraph** that the user can read aloud.
+    Format the response as a **full paragraph** that the user can read aloud. 
     """
 
     model = genai.GenerativeModel("gemini-1.5-pro-latest")

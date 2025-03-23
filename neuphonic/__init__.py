@@ -10,13 +10,6 @@ client = Neuphonic(api_key=os.environ.get('NEUPHONIC_API_KEY'))
 
 sse = client.tts.SSEClient()
 
-# TTSConfig is a pydantic model so check out the source code for all valid options
-tts_config = TTSConfig(
-    speed=1.05,
-    lang_code='en', # replace the lang_code with the desired language code.
-    voice_id='e564ba7e-aa8d-46a2-96a8-8dffedade48f'
-)
-
 # # Create an audio player with `pyaudio`
 # def generate_audio(script):
 #     script_hash = int(hashlib.sha256(script.encode("utf-8")).hexdigest(), 16) % (10 ** 8)
@@ -30,7 +23,13 @@ tts_config = TTSConfig(
 #     return file_name
 
 
-def generate_audio(script):
+def generate_audio(script, lang):
+    # TTSConfig is a pydantic model so check out the source code for all valid options
+    tts_config = TTSConfig(
+        speed=1.05,
+        lang_code=lang,  #  replace the lang_code with the desired language code.
+    )
+
     script_hash = int(hashlib.sha256(script.encode("utf-8")).hexdigest(), 16) % (10 ** 8)
     response = sse.send(script, tts_config=tts_config)
 

@@ -11,6 +11,8 @@ class Form(FlaskForm):
     name = StringField('Name', validators=[DataRequired()])
     details = StringField('Details (e.g., "He never listens")', validators=[DataRequired()])
     rudeness = IntegerField('Rudeness Level (1-10)', validators=[DataRequired(), NumberRange(min=1, max=10)])
+    language = SelectField('Language', choices=['English','French','Japanese','Spanish'],
+                           validators=[DataRequired()])
     submit = SubmitField('Generate Script')
 
 class DownloadForm(FlaskForm):

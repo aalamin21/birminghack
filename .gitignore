@@ -5,6 +5,6 @@ LLM/.env
 #gemini api key
 /.env
 #static directory [audio direc]
-app/static/audio/*
+app/static/audio/*.wav
 #neuphonic environment
 neuphonic/.env

@@ -11,16 +11,24 @@ audio_file = None
 @app.route('/', methods=['GET', 'POST'])
 def home():
     form = Form()
+    lan_dict = {
+        'English': 'en',
+        'French': 'fr',
+        'Japanese': 'ja',
+        'Spanish': 'es',
+    }
+
     if form.validate_on_submit():
         occasion = request.form.get("occasion", "Break Up")
         name = form.name.data
         details = form.details.data
         rudeness = int(form.rudeness.data)
-
+        lan = form.language.data
+        l = lan_dict[lan]
         # Generate the script
-        script = generate_script(occasion, name, details, rudeness)
+        script = generate_script(occasion, name, details, rudeness, lan)
 
-        audio_file = generate_audio(script)
+        audio_file = generate_audio(script, l)
         audio_file_path = os.path.join('static', 'audio', audio_file)
 
         return render_template('result.html', script=script, title='Result', audio_file_path=audio_file_path)
