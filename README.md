@@ -29,10 +29,10 @@ flask run
 ```
 
 ### Fill Form
-> Occasion: Occasion of awkward interaction
-> Name: Name of who the message is directed to
-> Details: Extra details about the message or the situation
-> Rudeness: 1-10 How harsh does the message need to be
-> Language: Output Language
+> Occasion: Occasion of awkward interaction\
+> Name: Name of who the message is directed to\
+> Details: Extra details about the message or the situation\
+> Rudeness: 1-10 How harsh does the message need to be\
+> Language: Output Language\
 > 
 > Output: Message Script and a voice generated audio with an option to download .wav file
