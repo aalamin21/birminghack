@@ -1,4 +1,10 @@
+<<<<<<< HEAD
+from flask import render_template, redirect, url_for, flash
+from app import app
+from app.forms import Form, GeminiForm
+=======
 import os
+>>>>>>> e529a8a495c5f833b40fb4a080d9827df0c3a226
 
 from flask import render_template, request, send_from_directory, flash
 from app import app

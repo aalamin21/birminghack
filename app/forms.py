@@ -1,4 +1,16 @@
 from flask_wtf import FlaskForm
+<<<<<<< HEAD
+from wtforms import SubmitField, HiddenField, StringField, PasswordField, BooleanField, TextAreaField
+from wtforms.validators import DataRequired, EqualTo, ValidationError, Email
+
+class Form(FlaskForm):
+    name = StringField('Name')
+    submit = SubmitField('Submit')
+
+class GeminiForm(FlaskForm):
+    prompt = TextAreaField('Question', validators=[DataRequired()])
+    submit = SubmitField('Get answer')
+=======
 from wtforms import SubmitField, StringField, IntegerField, SelectField, HiddenField
 from wtforms.validators import DataRequired, NumberRange
 from wtforms.widgets.core import RangeInput
@@ -33,3 +45,4 @@ class Form(FlaskForm):
 
 class DownloadForm(FlaskForm):
     download = HiddenField('Download Audio')
+>>>>>>> e529a8a495c5f833b40fb4a080d9827df0c3a226

@@ -9,3 +9,7 @@ class Config:
 
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app', 'data', 'data.sqlite')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+# Gemini API 配置
+    GEMINI_API_KEY = os.environ.get('GEMINI_API_KEY')
+    GEMINI_MODEL = 'gemini-1.5-flash'  # 选择合适的模型
