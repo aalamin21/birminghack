@@ -1,6 +1,6 @@
 import os
 
-from flask import render_template, request, send_from_directory
+from flask import render_template, request, send_from_directory, flash
 from app import app
 from app.forms import Form, DownloadForm
 from script_gen import generate_script
@@ -24,7 +24,13 @@ def home():
         audio_file = generate_audio(script)
         audio_file_path = os.path.join('static', 'audio', audio_file)
 
+
         return render_template('result.html', script=script, title='Result', audio_file_path=audio_file_path)
+
+    elif form.is_submitted():
+        for field, errors in form.errors.items():
+            for error in errors:
+                flash(error, 'danger')  # or 'warning' for yellow
 
     return render_template('home.html', form=form, title='Home')
 
