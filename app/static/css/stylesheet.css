@@ -1,0 +1,45 @@
+body {
+  background-color: #e6d6f0;
+  color: #1e1e2f;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.card {
+  border-radius: 1rem;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.btn-primary {
+  background-color: #3cd9c5;
+  border-color: #3cd9c5;
+}
+
+.btn-outline-primary {
+  color: #3cd9c5;
+  border-color: #3cd9c5;
+}
+
+.btn-outline-primary:hover {
+  background-color: #3cd9c5;
+  color: #fff;
+}
+
+.btn-outline-success {
+  color: #f78fb3;
+  border-color: #f78fb3;
+}
+
+.btn-outline-success:hover {
+  background-color: #f78fb3;
+  color: #fff;
+}
+
+
+
+audio {
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  background-color: #fefefe;
+}

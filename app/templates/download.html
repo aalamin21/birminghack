@@ -2,9 +2,19 @@
 {% import "bootstrap_wtf.html" as wtf %}
 
 {% block content %}
-    <form action="{{ url_for('download_file', audio_file_path = audio_file_path) }}" method="POST" novalidate>
-    {{ form.csrf_token() }}
-    {{ form.download(value=1) }}
-    <button class="btn btn-outline-primary btn-sm" type="submit">Download Audio</button>
-    </form>
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <div class="card shadow-sm border-0">
+      <div class="card-body text-center">
+        <form action="{{ url_for('download_file', audio_file_path = audio_file_path) }}" method="POST" novalidate>
+          {{ form.csrf_token() }}
+          {{ form.download(value=1) }}
+          <button class="btn btn-outline-primary" type="submit">
+            <i class="bi bi-download me-1"></i>Download Audio
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}

@@ -1,11 +1,7 @@
-#flask key
-.flaskenv
-#Neuphonics api key
-LLM/.env
-#gemini api key
-.env
-#static directory [audio direc]
-app/static/audio/*
 
-.idea/
-.DS_Store
+#static directory [audio direc]
+app/static/audio/*.wav
+#neuphonic environment
+neuphonic/.env
+#cache
+__pycache__/*

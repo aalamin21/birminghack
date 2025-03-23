@@ -6,31 +6,44 @@ from app.forms import Form, GeminiForm
 import os
 >>>>>>> e529a8a495c5f833b40fb4a080d9827df0c3a226
 
-from flask import render_template, request, send_from_directory
+from flask import render_template, request, send_from_directory, flash
 from app import app
 from app.forms import Form, DownloadForm
 from script_gen import generate_script
 from neuphonic import generate_audio
-import hashlib
 
 # For use in frontond
 audio_file = None
 @app.route('/', methods=['GET', 'POST'])
 def home():
     form = Form()
+    lan_dict = {
+        'English': 'en',
+        'French': 'fr',
+        'Japanese': 'ja',
+        'Spanish': 'es',
+    }
+
     if form.validate_on_submit():
         occasion = request.form.get("occasion", "Break Up")
         name = form.name.data
         details = form.details.data
         rudeness = int(form.rudeness.data)
-
+        lan = form.language.data
+        l = lan_dict[lan]
         # Generate the script
-        script = generate_script(occasion, name, details, rudeness)
+        script = generate_script(occasion, name, details, rudeness, lan)
 
-        audio_file = generate_audio(script)
+        audio_file = generate_audio(script, l)
         audio_file_path = os.path.join('static', 'audio', audio_file)
 
+
         return render_template('result.html', script=script, title='Result', audio_file_path=audio_file_path)
+
+    elif form.is_submitted():
+        for field, errors in form.errors.items():
+            for error in errors:
+                flash(error, 'danger')  # or 'warning' for yellow
 
     return render_template('home.html', form=form, title='Home')
 

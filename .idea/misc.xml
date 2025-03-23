@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Black">
-    <option name="sdkName" value="SWW2" />
+    <option name="sdkName" value="SW2-Env" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="SWW2" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="birminghack" project-jdk-type="Python SDK" />
 </project>
