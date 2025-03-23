@@ -1,5 +1,21 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<<<<<<< HEAD
     <h2>Your AI-Generated Breakup Script</h2>
+=======
+    <h2>Your AI-Generated Script</h2>
+    <p>{{ script }}</p>
+    <a href="{{ url_for('home') }}">Generate Another</a>
+    <br>
+
+    <h2>Here is your audio</h2>
+    <br>
+
+{#    <p>{{ audio_file }}</p>#}
+    <audio controls>
+        <source src="{{ audio_file_path }}" type="audio/wav">
+    </audio>
+    <a href="{{ url_for('download_file', audio_file_path = audio_file_path) }}">Download Audio</a>
+>>>>>>> e529a8a495c5f833b40fb4a080d9827df0c3a226
 {% endblock %}

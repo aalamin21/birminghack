@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% import "bootstrap_wtf.html" as wtf %}
+
+{% block content %}
+    <form action="{{ url_for('download_file', audio_file_path = audio_file_path) }}" method="POST" novalidate>
+    {{ form.csrf_token() }}
+    {{ form.download(value=1) }}
+    <button class="btn btn-outline-primary btn-sm" type="submit">Download Audio</button>
+    </form>
+{% endblock %}
