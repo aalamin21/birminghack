@@ -8,8 +8,12 @@
 ```
 pip install -r requirements.txt
 ```
-Create a `.env` file in the `neuphonic/` directory and add `NEUPHONIC_API_KEY=<YOUR NEUPHONIC API KEY>`.
-Create a `.env` file in the base directory and add `GEMINI_API_KEY=<YOUR GEMINI API KEY`.
+
+Create a `.env` file in the base directory and add:
+```
+GEMINI_API_KEY=<YOUR GEMINI API KEY>
+NEUPHONIC_API_KEY=<YOUR NEUPHONIC API KEY>
+```
 Create a `.flaskenv` file in the base directory and add:
 ```
 FLASK_APP = run.py
