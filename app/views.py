@@ -5,7 +5,6 @@ from app import app
 from app.forms import Form, DownloadForm
 from script_gen import generate_script
 from neuphonic import generate_audio
-import hashlib
 
 # For use in frontond
 audio_file = None

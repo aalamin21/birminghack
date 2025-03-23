@@ -1,0 +1,8 @@
+flask
+flask_wtf
+pyaudio
+python-dotenv
+pyneuphonic
+wtforms
+jinja2
+google-generativeai
