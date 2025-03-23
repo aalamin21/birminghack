@@ -32,7 +32,7 @@ def generate_script(occasion, name, details, rudeness, lang):
 
     Please generate a **first-person speech** that the user will say **directly to {name}** in {lang}.  
     The message should:
-    - Start with a **soft opening** or a joke (if appropriate).  
+    - Start with a **soft opening** or a joke (if appropriate). Do not include directions, it should be purely speech.  
     - Clearly state the reason in a **concise, natural, and humorous way**.  
     - End with a **smooth exit line** (e.g., "I wish you the best").  
 
