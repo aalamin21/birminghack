@@ -8,3 +8,5 @@ LLM/.env
 app/static/audio/*.wav
 #neuphonic environment
 neuphonic/.env
+#cache
+__pycache__/*

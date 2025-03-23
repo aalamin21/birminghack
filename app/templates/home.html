@@ -30,7 +30,7 @@
   <!-- Details Field -->
   <div class="mb-3">
     {{ form.details.label(class='form-label') }}
-    {{ form.details(class='form-control', placeholder='e.g. "He never listens"... Write in english bitch') }}
+    {{ form.details(class='form-control', placeholder='e.g. "He never listens"... Write in english') }}
     {% for error in form.details.errors %}
       <div class="invalid-feedback">{{ error }}</div>
     {% endfor %}
@@ -54,6 +54,16 @@
       <span>Very rude</span>
     </div>
   </div>
+
+<div class="mb-3">
+  {{ form.language.label(class='form-label') }}
+  {{ form.language(class='form-select' + (' is-invalid' if form.language.errors else '')) }}
+  {% for error in form.language.errors %}
+    <div class="invalid-feedback">
+      {{ error }}
+    </div>
+  {% endfor %}
+</div>
 
   <!-- Submit Button -->
   <div class="text-center">
